@@ -7,10 +7,14 @@ export interface ModalProps {
   handleModal: (params: any) => void;
 }
 
-const Modal = ({ children, width, handleModal }: ModalProps) => {
+const Modal = ({ children, width, handleModal, ...props }: ModalProps) => {
   return (
     <Container onClick={handleModal}>
-      <ModalContainer width={width} onClick={(e) => e.stopPropagation()}>
+      <ModalContainer
+        {...props}
+        width={width}
+        onClick={(e) => e.stopPropagation()}
+      >
         {children}
       </ModalContainer>
     </Container>
