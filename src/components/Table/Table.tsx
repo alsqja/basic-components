@@ -5,7 +5,7 @@ import { Cell } from "./Cell";
 import { getReplaceMobile, header, items } from "./data";
 import { IAccount } from ".";
 import { useState } from "react";
-import { BasicButton } from "./BasicButton";
+import { BasicButton } from "../BasicButton";
 
 interface ITableHeader {
   id?: string;
