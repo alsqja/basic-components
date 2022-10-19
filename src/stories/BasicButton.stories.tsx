@@ -6,7 +6,9 @@ export default {
   component: BasicButton,
 } as Meta;
 
-const Template: Story<BasicButtonProps> = (args) => <BasicButton {...args} />;
+const Template: Story<BasicButtonProps> = (args) => (
+  <BasicButton {...args}>버튼</BasicButton>
+);
 
 export const PrimaryMini = Template.bind({});
 PrimaryMini.args = {
