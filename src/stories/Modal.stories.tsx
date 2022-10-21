@@ -13,7 +13,7 @@ export const Basic = Template.bind({});
 Basic.args = {
   children: <div>모달 예시</div>,
   width: 360,
-  handleModal: () => alert("modal"),
+  handleModal: () => alert("modal off"),
 };
 
 const ModalContainer = styled(Modal)`
