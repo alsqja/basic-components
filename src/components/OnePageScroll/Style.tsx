@@ -24,7 +24,7 @@ export const PageContainer = styled.div`
 `;
 
 const swing = keyframes`
-20% {
+  20% {
     transform: rotate(15deg);
   }
   40% {
