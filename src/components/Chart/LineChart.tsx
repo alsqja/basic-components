@@ -13,7 +13,7 @@ export interface LineChartProps {
 
 export const LineChart = (props: LineChartProps) => {
   const divRef = useRef<HTMLDivElement>(null);
-  const [graphHeight, setGraphData] = useState(0);
+  const [graphHeight, setGraphData] = useState<number>(0);
 
   useEffect(() => {
     const margin = { top: 20, right: 30, bottom: 30, left: 40 };
