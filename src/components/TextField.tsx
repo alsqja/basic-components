@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useRef } from "react";
 import styled from "styled-components";
 
 interface IProps {
@@ -8,14 +8,19 @@ interface IProps {
 }
 
 function TextField({ title, value, onChange = () => {} }: IProps) {
+  const ref = useRef<HTMLInputElement>(null);
+
   return (
     <InputWrapper>
       <InputBox
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required
+        ref={ref}
       />
-      <InputTitle>{title}</InputTitle>
+      <InputTitle onClick={() => ref.current && ref.current.focus()}>
+        {title}
+      </InputTitle>
     </InputWrapper>
   );
 }
