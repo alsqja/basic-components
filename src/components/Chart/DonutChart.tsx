@@ -27,6 +27,8 @@ const Legend = styled.svg`
 
 export const DonutChart = () => {
   const svgRef = useRef<SVGSVGElement | null>(null);
+
+  /** props 가능 리스트 */
   const margin = {
     top: 20,
     right: 20,
@@ -55,7 +57,7 @@ export const DonutChart = () => {
   const colorExtent = d3.extent(data, (data) => data.value) as [number, number];
   const colorScale = d3.scaleLinear().domain(colorExtent).range([0, 1]);
 
-  const colored = (t: number) => d3.interpolatePuBu(colorScale(t));
+  const colored = (t: number) => d3.interpolateCool(colorScale(t));
 
   const arcLabel = () => {
     return d3.arc().innerRadius(innerRadius).outerRadius(radius);
